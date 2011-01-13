@@ -5,5 +5,10 @@ Feature: Create an Expense
 	
 	Scenario: Creating a new Expense
 		Given I am on the homepage
-		When I click "Create Expense"
+		When I press "Create Expense"
 		Then I should see "New Expense"
+		
+		When I fill in "Title" with "My Title"
+		And I fill in "Description" with "My Description"
+		And I press "Save"
+		Then I should see "Expense Created"

@@ -1,4 +1,12 @@
 Exme::Application.routes.draw do
+  get "expenses/index"
+  
+  resources :expenses
+  
+  match 'expenses/new' => 'expenses#new'
+  
+  root :to=> "expenses#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,15 @@
+<h1>Expenses</h1>
+
+<% if flash[:warning] or flash[:notice] %>
+	<%= flash[:warning] || flash[:notice] %>
+<% end %>
+
+<%= button_to "Create Expense", new_expense_path %>
+
+
+
+<% unless @expenses.blank? %>
+	<% @expenses.each do |ex| %>
+		title: <%= ex.title %> <br/>
+	<% end %>
+<% end %>
